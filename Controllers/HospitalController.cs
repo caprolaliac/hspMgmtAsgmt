@@ -63,6 +63,7 @@ namespace HspMgmt_asgmt.Controllers
         {
             if (!ModelState.IsValid)
             {
+                
                 return View(hospital);
             }
 

@@ -61,8 +61,8 @@ namespace HspMgmt_asgmt.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.Patients = _context.Patients.ToList(); // Assuming you want to select a patient
-            ViewBag.Doctors = _context.Doctors.ToList(); // Assuming you want to select a doctor
+            ViewBag.Patients = _context.Patients.ToList(); 
+            ViewBag.Doctors = _context.Doctors.ToList(); 
             return View();
         }
 
@@ -72,6 +72,8 @@ namespace HspMgmt_asgmt.Controllers
         {
             if (!ModelState.IsValid)
             {
+                ViewBag.Doctors = _context.Doctors.ToList();
+                ViewBag.Patients = _context.Patients.ToList();
                 return View(appointment);
             }
 
