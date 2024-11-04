@@ -1,0 +1,18 @@
+﻿@model HspMgmt_asgmt.Models.Doctor
+
+<h1>Doctor Details</h1>
+
+<div>
+    <h4>Doctor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Doctor ID</dt>
+        <dd class="col-sm-10">@Model.DoctorId</dd>
+        <dt class="col-sm-2">Doctor Name</dt>
+        <dd class="col-sm-10">@Model.Name</dd>
+        <dt class="col-sm-2">Hospital</dt>
+        <dd class="col-sm-10">@Model.Hospital?.Name</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn btn-primary">Back to List</a>

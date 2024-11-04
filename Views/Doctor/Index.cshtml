@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HspMgmt_asgmt.Models.Doctor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<p>
+    <a asp-action="Create">Create New Doctor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Doctor ID</th>
+            <th>Doctor Name</th>
+            <th>Specialisation</th>
+            <th>Hospital Name</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doctor in Model)
+        {
+            <tr>
+                <td>@doctor.DoctorId</td>
+                <td>@doctor.Name</td>
+                <td>@doctor.Specialty</td>
+                <td>@doctor.Hospital.Name</td>
+                <td>@doctor.Hospital.Location</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@doctor.DoctorId">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@doctor.DoctorId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@doctor.DoctorId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
